@@ -4,6 +4,7 @@ const connectToDb = require("./db/dbService");
 const chalk = require("chalk");
 const { handleError } = require("./utils/handleErrors");
 const corsMiddleware = require("./middlewares/corsMiddleware");
+const booksController = require("./books/routes/booksRestController");
 
 const PORT = 8181;
 
@@ -13,6 +14,7 @@ app.use(corsMiddleware);
 app.use(express.json());
 
 app.use("/users", usersController);
+app.use("/books", booksController);
 
 app.use((req, res) => {
   return handleError(res, 404, "Path not found");

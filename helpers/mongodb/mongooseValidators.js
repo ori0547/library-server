@@ -38,10 +38,7 @@ const NAME = {
   last: REQUIRED_TEXT,
 };
 
-const IMAGE = {
-  url: URL,
-  alt: TEXT,
-};
+
 
 const ADDRESS = {
   state: TEXT,
@@ -55,5 +52,23 @@ const ADDRESS = {
   },
   zip: { type: Number },
 };
+const TITLE = {
+  type: String,
+  required: true,
+};
+const SUMMARY = {
+  type: String,
+  required: true,
+};
+const DESCRIPTION = {
+  type: String,
+  required: true,
+  minLength: 65,
+};
+const PRICE = {
+  type: Number,
+};
 
-module.exports = { URL, EMAIL, TEXT, REQUIRED_TEXT, PHONE, NAME, IMAGE, ADDRESS };
+
+
+module.exports = { URL, EMAIL, TEXT, REQUIRED_TEXT, PHONE, NAME, ADDRESS, TITLE, SUMMARY, DESCRIPTION, PRICE };

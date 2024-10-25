@@ -26,8 +26,8 @@ const getUser = async (userId) => {
 
 const getUsers = async () => {
   try {
-    let users = await User.find();
-    return users;
+    return await User.find();
+
   } catch (error) {
     createError("Mongoose", error);
   }
