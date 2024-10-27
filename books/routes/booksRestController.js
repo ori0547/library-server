@@ -26,5 +26,7 @@ booksController.get("/", async (req, res) => {
   }
 });
 
+//get - favoritesbooks([id's]) => return [{books}]
+
 
 module.exports = booksController;

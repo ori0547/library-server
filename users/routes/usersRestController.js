@@ -50,7 +50,8 @@ usersController.get("/:id", auth, async (req, res) => {
       );
     }
 
-    let user = await getUser(id);
+    const user = await getUser(id);
+    user.password = undefined;
     res.send(user);
   } catch (error) {
     return handleError(res, error.status || 400, error.message);
@@ -79,7 +80,7 @@ usersController.patch("/favorites", auth, async (req, res) => {
       user.favorites.push(bookId);
     }
     await user.save();
-    res.send(!isBookLiked);
+    res.send(user.favorites);
   } catch (error) {
     return handleError(res, error.status || 400, error.message);
   }
