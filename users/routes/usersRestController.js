@@ -4,6 +4,7 @@ const { handleError } = require("../../utils/handleErrors");
 const { validateRegistration, validateLogin } = require("../validation/userValidationService");
 const adminOnly = require("../../middlewares/adminOnlyMiddleware");
 const auth = require("../../middlewares/authMiddleware");
+const User = require("../models/mongodb/User");
 
 const usersController = express.Router();
 
@@ -39,6 +40,8 @@ usersController.get("/:id", auth, async (req, res) => {
     const userInfo = req.user;
     const { id } = req.params;
 
+
+
     if (userInfo._id !== id && !userInfo.isAdmin) {
       return handleError(
         res,
@@ -62,5 +65,24 @@ usersController.get("/", [auth, adminOnly], async (req, res) => {
     return handleError(res, error.status || 400, error.message);
   }
 });
+
+usersController.patch("/favorites", auth, async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const { bookId } = req.body;
+    const user = await User.findById(userId);
+    const favorites = user.favorites;
+    const isBookLiked = favorites.includes(bookId)
+    if (isBookLiked) {
+      user.favorites.pull(bookId);
+    } else {
+      user.favorites.push(bookId);
+    }
+    await user.save();
+    res.send(!isBookLiked);
+  } catch (error) {
+    return handleError(res, error.status || 400, error.message);
+  }
+})
 
 module.exports = usersController;
