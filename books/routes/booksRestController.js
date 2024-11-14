@@ -2,8 +2,7 @@ const express = require("express");
 const { handleError } = require("../../utils/handleErrors");
 const adminOnly = require("../../middlewares/adminOnlyMiddleware");
 const auth = require("../../middlewares/authMiddleware");
-const { getBook, getBooks } = require("../models/booksAccessDataService");
-const { default: mongoose } = require("mongoose");
+const { getBook, getBooks, addBook } = require("../models/booksAccessDataService");
 
 const booksController = express.Router();
 
@@ -34,6 +33,17 @@ booksController.get("/", async (req, res) => {
   try {
     const books = await getBooks();
     res.send(books);
+  } catch (error) {
+    return handleError(res, error.status || 400, error.message);
+  }
+});
+
+booksController.post("/", async (req, res) => {
+  try {
+    const book = req.body;
+    const newBook = await addBook(book)
+    if (!newBook) throw new Error("can't add book")
+    res.send(newBook._id)
   } catch (error) {
     return handleError(res, error.status || 400, error.message);
   }

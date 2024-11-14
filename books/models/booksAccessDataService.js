@@ -18,7 +18,16 @@ const getBooks = async () => {
     createError("Mongoose", error);
   }
 }
+const addBook = async (book) => {
+  try {
+    return await Book.create(book)
+  } catch (error) {
+    createError("Mongoose", error);
+  }
+}
 
 
 
-module.exports = { getBook, getBooks };
+
+
+module.exports = { getBook, getBooks, addBook };
