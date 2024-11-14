@@ -26,8 +26,20 @@ const addBook = async (book) => {
   }
 }
 
+const editBook = async (bookId, book) => {
+  try {
+    return await Book.findByIdAndUpdate(
+      bookId,
+      book,
+      { new: true }
+    );
+  } catch (error) {
+    createError("Mongoose", error);
+  }
+}
 
 
 
 
-module.exports = { getBook, getBooks, addBook };
+
+module.exports = { getBook, getBooks, addBook, editBook };
