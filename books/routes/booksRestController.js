@@ -3,10 +3,22 @@ const { handleError } = require("../../utils/handleErrors");
 const adminOnly = require("../../middlewares/adminOnlyMiddleware");
 const auth = require("../../middlewares/authMiddleware");
 const { getBook, getBooks } = require("../models/booksAccessDataService");
+const { default: mongoose } = require("mongoose");
 
 const booksController = express.Router();
 
+booksController.patch("/book-list", async (req, res) => {
+  try {
+    const { bookIds } = req.body;
+    const books = await Promise.all(
+      bookIds.map(bookId => getBook(bookId))
+    );
 
+    res.send(books);
+  } catch (error) {
+    return handleError(res, error.status || 400, error.message);
+  }
+});
 
 booksController.get("/:id", async (req, res) => {
   try {
@@ -17,6 +29,7 @@ booksController.get("/:id", async (req, res) => {
     return handleError(res, error.status || 400, error.message);
   }
 });
+
 booksController.get("/", async (req, res) => {
   try {
     const books = await getBooks();
@@ -26,7 +39,8 @@ booksController.get("/", async (req, res) => {
   }
 });
 
-//get - favoritesbooks([id's]) => return [{books}]
+
+
 
 
 module.exports = booksController;
