@@ -1,3 +1,6 @@
+const { object } = require("joi");
+const { default: mongoose } = require("mongoose");
+
 const URL = {
   type: String,
   trim: true,
@@ -69,6 +72,11 @@ const PRICE = {
   type: Number,
 };
 
+const USERID = {
+  type: mongoose.Types.ObjectId,
+  required: true,
+}
 
 
-module.exports = { URL, EMAIL, TEXT, REQUIRED_TEXT, PHONE, NAME, ADDRESS, TITLE, SUMMARY, DESCRIPTION, PRICE };
+
+module.exports = { URL, EMAIL, TEXT, REQUIRED_TEXT, PHONE, NAME, ADDRESS, TITLE, SUMMARY, DESCRIPTION, PRICE, USERID };

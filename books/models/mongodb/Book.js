@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { TITLE, SUMMARY, DESCRIPTION, PRICE, URL } = require("../../../helpers/mongodb/mongooseValidators");
+const { TITLE, SUMMARY, DESCRIPTION, PRICE, URL, USERID } = require("../../../helpers/mongodb/mongooseValidators");
 
 const schema = new mongoose.Schema({
   title: TITLE,
@@ -7,6 +7,7 @@ const schema = new mongoose.Schema({
   description: DESCRIPTION,
   price: PRICE,
   image: URL,
+  userId: USERID,
 });
 
 const Book = mongoose.model("book", schema);
