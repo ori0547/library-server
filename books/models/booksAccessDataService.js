@@ -1,3 +1,4 @@
+const User = require("../../users/models/mongodb/User");
 const { createError } = require("../../utils/handleErrors");
 const Book = require("./mongodb/Book");
 
@@ -38,8 +39,19 @@ const editBook = async (bookId, book) => {
   }
 }
 
+const deleteBook = async (bookId) => {
+  try {
+    const users = await User.find({ favorites: bookId });
+    const favorites = users.map((user) => {
+      user.favorites = user.favorites.filter((book) => book._id != bookId);
+      return user.save();
+    });
 
+    await Promise.all(favorites);
+    await Book.findByIdAndDelete(bookId);
+  } catch (error) {
+    createError("Mongoose", error);
+  }
+}
 
-
-
-module.exports = { getBook, getBooks, addBook, editBook };
+module.exports = { getBook, getBooks, addBook, editBook, deleteBook };

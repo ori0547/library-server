@@ -1,4 +1,5 @@
 const registerSchema = require("./joi/registerSchema");
+const editSchema = require("./joi/editSchema");
 const loginSchema = require("./joi/loginSchema");
 
 // const config = require("config");
@@ -19,4 +20,11 @@ const validateLogin = (user) => {
   }
 };
 
-module.exports = { validateRegistration, validateLogin };
+const validateEdit = (user) => {
+  if (validator === "joi") {
+    const { error } = editSchema.validate(user);
+    return error ? error.details[0].message : "";
+  }
+};
+
+module.exports = { validateRegistration, validateLogin, validateEdit };

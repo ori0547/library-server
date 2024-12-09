@@ -1,0 +1,42 @@
+[
+  {
+    "name": {
+      "first": "asd",
+      "middle": "dsa",
+      "last": "aaa"
+    },
+    "phone": "012345678",
+    "email": "asd@asd.asd",
+    "password": "Abcd1234!",
+    "address": {
+      "state": "asd",
+      "country": "asd",
+      "city": "asd",
+      "street": "asd",
+      "houseNumber": 123,
+      "zip": 321
+    },
+    "isAdmin": true,
+    "isBusiness": false
+  },
+  {
+    "name": {
+      "first": "business",
+      "middle": "dsa",
+      "last": "aaa"
+    },
+    "phone": "012345678",
+    "email": "dsa@dsa.dsa",
+    "password": "Abcd1234!",
+    "address": {
+      "state": "asd",
+      "country": "asd",
+      "city": "asd",
+      "street": "asd",
+      "houseNumber": 123,
+      "zip": 321
+    },
+    "isAdmin": false,
+    "isBusiness": true
+  }
+]

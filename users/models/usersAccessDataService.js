@@ -15,6 +15,22 @@ const registerUser = async (newUser) => {
   }
 };
 
+const editUser = async (userId, user) => {
+  try {
+    return await User.findByIdAndUpdate(userId, user, { new: true });
+  } catch (error) {
+    createError("Mongoose", error);
+  }
+};
+
+const deleteUser = async (userId) => {
+  try {
+    return await User.findByIdAndDelete(userId);
+  } catch (error) {
+    createError("Mongoose", error);
+  }
+};
+
 const getUser = async (userId) => {
   try {
     let user = await User.findById(userId);
@@ -27,7 +43,6 @@ const getUser = async (userId) => {
 const getUsers = async () => {
   try {
     return await User.find();
-
   } catch (error) {
     createError("Mongoose", error);
   }
@@ -57,4 +72,4 @@ const loginUser = async (email, password) => {
   }
 };
 
-module.exports = { registerUser, getUser, getUsers, loginUser };
+module.exports = { registerUser, getUser, getUsers, loginUser, editUser, deleteUser };
