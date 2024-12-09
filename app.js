@@ -6,6 +6,7 @@ const { handleError } = require("./utils/handleErrors");
 const corsMiddleware = require("./middlewares/corsMiddleware");
 const booksController = require("./books/routes/booksRestController");
 const seedUsers = require("./users/seed/users.seed");
+const seedBooks = require("./books/seed/books.seed");
 
 const PORT = 8080;
 
@@ -30,4 +31,6 @@ app.listen(PORT, async () => {
   console.log(chalk.yellow("app is listening to port " + PORT));
   await connectToDb();
   await seedUsers();
+  await seedBooks();
+
 });

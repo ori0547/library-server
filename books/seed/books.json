@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Into Thin Air",
+    "summary": "A gripping account of the Mount Everest disaster.",
+    "description": "Jon Krakauer provides a harrowing firsthand account of the deadly storm that claimed lives during the 1996 Everest expedition, blending adventure with human resilience.",
+    "price": 18.99,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  },
+  {
+    "title": "Salt, Fat, Acid, Heat",
+    "summary": "A masterful approach to cooking.",
+    "description": "Samin Nosrat breaks down the four fundamental elements of cooking, providing home chefs with skills to elevate any dish.",
+    "price": 26.99,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  },
+  {
+    "title": "The Power of Now",
+    "summary": "A guide to spiritual enlightenment.",
+    "description": "Eckhart Tolle shares transformative insights on living in the moment, aiming to inspire mindfulness and spiritual growth.",
+    "price": 16.99,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "summary": "Exploring humanity's past and future.",
+    "description": "Yuval Noah Harari examines the evolution of Homo sapiens, offering thought-provoking insights into our history and potential future.",
+    "price": 22.50,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  },
+  {
+    "title": "The Body Keeps the Score",
+    "summary": "Understanding trauma and recovery.",
+    "description": "Bessel van der Kolk explores the impact of trauma on the body and mind, providing strategies for healing and resilience.",
+    "price": 17.99,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  },
+  {
+    "title": "Blue Latitudes",
+    "summary": "Following Captain Cook's adventures.",
+    "description": "Tony Horwitz retraces Captain Cook’s voyages, blending historical insight with his own travel experiences in a fascinating exploration of the Pacific.",
+    "price": 19.99,
+    "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+    "userId": "67572a5f7c8023dbcdae9e85"
+  }
+]

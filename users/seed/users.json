@@ -1,12 +1,12 @@
 [
   {
     "name": {
-      "first": "asd",
-      "middle": "dsa",
-      "last": "aaa"
+      "first": "admin",
+      "middle": "",
+      "last": "nimda"
     },
     "phone": "012345678",
-    "email": "asd@asd.asd",
+    "email": "admin@admin.com",
     "password": "Abcd1234!",
     "address": {
       "state": "asd",
@@ -26,7 +26,7 @@
       "last": "aaa"
     },
     "phone": "012345678",
-    "email": "dsa@dsa.dsa",
+    "email": "business@business.com",
     "password": "Abcd1234!",
     "address": {
       "state": "asd",
