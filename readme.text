@@ -1,0 +1,167 @@
+# Project Setup and Usage Guide
+
+## 📦 Installation
+
+### Backend
+1. Navigate to the backend folder:
+   ```bash
+   cd back
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the backend server:
+   ```bash
+   npm run dev
+   ```
+
+### Frontend
+1. Navigate to the frontend folder:
+   ```bash
+   cd front
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the frontend server:
+   ```bash
+   npm run dev
+   ```
+
+Both servers should now be running.
+
+---
+
+## 🌐 API Endpoints
+
+### General Instructions
+- Base URL: `http://localhost:<PORT>`
+- Use tools like Postman or browser to test endpoints.
+
+### **Books Endpoints**
+
+#### **GET /api/books**
+- **Description:** Retrieve a list of all books.
+- **Response:**
+   ```json
+   [
+     {
+       "id": 1,
+       "title": "Book Title",
+       "author": "Author Name"
+     }
+   ]
+   ```
+
+#### **GET /api/books/:id**
+- **Description:** Retrieve details of a specific book by ID.
+- **Response:**
+   ```json
+   {
+     "id": 1,
+     "title": "Book Title",
+     "author": "Author Name"
+   }
+   ```
+
+#### **PATCH /api/books/book-list**
+- **Description:** Retrieve multiple books by an array of IDs.
+- **Payload:**
+   ```json
+   {
+     "bookIds": ["id1", "id2"]
+   }
+   ```
+
+#### **POST /api/books**
+- **Description:** Add a new book.
+- **Payload:**
+   ```json
+   {
+     "title": "New Book",
+     "author": "Author"
+   }
+   ```
+
+#### **PUT /api/books/:id**
+- **Description:** Update an existing book by ID.
+- **Payload:**
+   ```json
+   {
+     "title": "Updated Title",
+     "author": "Updated Author"
+   }
+   ```
+
+#### **DELETE /api/books/:id**
+- **Description:** Delete a specific book by ID.
+
+---
+
+### **Users Endpoints**
+
+#### **POST /api/users/signup**
+- **Description:** Register a new user.
+- **Payload:**
+   ```json
+   {
+     "email": "user@example.com",
+     "password": "password123"
+   }
+   ```
+
+#### **POST /api/users/login**
+- **Description:** User login.
+- **Payload:**
+   ```json
+   {
+     "email": "user@example.com",
+     "password": "password123"
+   }
+   ```
+
+#### **GET /api/users**
+- **Description:** Get all users (Admin only).
+
+#### **GET /api/users/:id**
+- **Description:** Retrieve user details by ID.
+
+#### **PUT /api/users/:id**
+- **Description:** Update user details by ID.
+- **Payload:**
+   ```json
+   {
+     "name": "Updated Name",
+     "email": "updated@example.com"
+   }
+   ```
+
+#### **DELETE /api/users/:id**
+- **Description:** Delete a user by ID.
+
+#### **PATCH /api/users/favorites**
+- **Description:** Toggle a book in user's favorites.
+- **Payload:**
+   ```json
+   {
+     "bookId": "bookId"
+   }
+   ```
+
+---
+
+## 🛠️ Development Tips
+- Ensure both frontend and backend servers are running.
+- Adjust environment variables if needed.
+- Use browser developer tools for debugging frontend issues.
+
+---
+
+## 📝 Notes
+- Ensure Node.js is installed.
+- Adjust `.env` files for sensitive data.
+
+Feel free to update this README with specific endpoint details after reviewing the backend routes.
+

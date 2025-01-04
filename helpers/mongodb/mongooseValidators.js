@@ -4,7 +4,6 @@ const { default: mongoose } = require("mongoose");
 const URL = {
   type: String,
   trim: true,
-  lowercase: true,
   match: /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,})(\/\S*)?$/,
 };
 
@@ -41,8 +40,6 @@ const NAME = {
   last: REQUIRED_TEXT,
 };
 
-
-
 const ADDRESS = {
   state: TEXT,
   country: REQUIRED_TEXT,
@@ -75,8 +72,19 @@ const PRICE = {
 const USERID = {
   type: mongoose.Types.ObjectId,
   required: true,
-}
+};
 
-
-
-module.exports = { URL, EMAIL, TEXT, REQUIRED_TEXT, PHONE, NAME, ADDRESS, TITLE, SUMMARY, DESCRIPTION, PRICE, USERID };
+module.exports = {
+  URL,
+  EMAIL,
+  TEXT,
+  REQUIRED_TEXT,
+  PHONE,
+  NAME,
+  ADDRESS,
+  TITLE,
+  SUMMARY,
+  DESCRIPTION,
+  PRICE,
+  USERID,
+};
